@@ -1,14 +1,14 @@
 <template lang='pug'>
   div.my2
     .contain(v-if='!data')
-      h1 Unknown Gekko instance
-      p Gekko doesn't know what gekko this is...
+      h1 Unknown Bot instance
+      p Trade Bot doesn't know what bot this is...
     div(v-if='data')
       h2.contain Gekko {{ type }}
       div(v-if='isArchived', class='contain brdr--mid-gray p1 bg--orange')
-        | This is an archived Gekko, it is currently not running anymore.
+        | This is an archived Bot, it is currently not running anymore.
       div(v-if='data.errorMessage', class='contain brdr--mid-gray p1 bg--orange')
-        | This is Gekko crashed with the following error: {{ data.errorMessage }}
+        | This is Bot crashed with the following error: {{ data.errorMessage }}
       .grd.contain
         .grd-row
           .grd-row-col-3-6
@@ -65,7 +65,7 @@
             h3 Profit report
             template(v-if='!report')
               p
-                em(v-if='isArchived') This Gekko never executed a trade..
+                em(v-if='isArchived') This Bot never executed a trade..
                 em(v-if='!isArchived') Waiting for at least one trade..
             template(v-if='report')
               .grd-row
@@ -83,13 +83,12 @@
               .grd-row
                 .grd-row-col-3-6 Alpha
                 .grd-row-col-3-6 {{ round(report.alpha) }} {{ config.watch.currency }}
-        p(v-if='isStratrunner && !watcher && !isArchived') WARNING: stale gekko, not attached to a watcher, please report 
-          a(href='https://github.com/askmike/gekko/issues') here
+        p(v-if='isStratrunner && !watcher && !isArchived') WARNING: state Bot, not attached to a watcher
           | .
         p(v-if='!isArchived')
-          a(v-on:click='stopGekko', class='w100--s my1 btn--red') Stop Gekko
+          a(v-on:click='stopGekko', class='w100--s my1 btn--red') Stop Bot
         p(v-if='isArchived')
-          a(v-on:click='deleteGekko', class='w100--s my1 btn--red') Delete Gekko
+          a(v-on:click='deleteGekko', class='w100--s my1 btn--red') Delete Bot
         p(v-if='isStratrunner && watcher && !isArchived')
           em This gekko gets market data from 
             router-link(:to='"/live-gekkos/" + watcher.id') this market watcher
@@ -327,23 +326,23 @@ export default {
     },
     stopGekko: function() {
       if(this.hasLeechers) {
-        return alert('This Gekko is fetching market data for multiple stratrunners, stop these first.');
+        return alert('This Bot is fetching market data for multiple stratrunners, stop these first.');
       }
 
-      if(!confirm('Are you sure you want to stop this Gekko?')) {
+      if(!confirm('Are you sure you want to stop this Bot?')) {
         return;
       }
 
       post('stopGekko', { id: this.data.id }, (err, res) => {
-        console.log('stopped gekko');
+        console.log('stopped bot');
       });
     },
     deleteGekko: function() {
       if(!this.isArchived) {
-        return alert('This Gekko is still running, stop it first!');
+        return alert('This Bot is still running, stop it first!');
       }
 
-      if(!confirm('Are you sure you want to delete this Gekko?')) {
+      if(!confirm('Are you sure you want to delete this bot?')) {
         return;
       }
 
