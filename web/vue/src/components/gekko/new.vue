@@ -1,6 +1,6 @@
 <template lang='pug'>
   div.contain.my2
-    h3 Start a new gekko
+    h3 Start a new bot
     gekko-config-builder(v-on:config='updateConfig')
     .hr
     .txt--center(v-if='config.valid')
