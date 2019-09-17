@@ -58,7 +58,7 @@
             template(v-if='gekko.events.tradeCompleted') {{ gekko.events.tradeCompleted.length }}
     .hr
     h2 Start a new live Gekko
-    router-link.btn--primary(to='/live-gekkos/new') Start a new live Gekko!
+    router-link.btn--primary(to='/live-gekkos/new') Start a new live Bot!
 </template>
 
 <script>
