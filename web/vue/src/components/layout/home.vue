@@ -2,9 +2,9 @@
   section.contain.grd-row
     .grd-row-col-3-6(v-html='left')
     .grd-row-col-3-6.txt--center
-      img(src='static/gekko.jpg')
+      img(src='static/bot.jpg')
       p
-        em The most valuable commodity I know of is information.
+        em 
 </template>
 
 <script>
@@ -12,15 +12,14 @@ import marked from '../../tools/marked';
 
 const left = marked(`
 
-## Gekko
+## TradeBot
 
-Gekko is a Bitcoin trading bot and backtesting platform that
-connects to popular Bitcoin exchanges. It is written in javascript
-and runs on nodejs.
+This is a Bitcoin trading bot and backtesting platform that
+connects to popular Bitcoin exchanges. It checks the market data for the prices and after the analysis based on historical data it trades to get you as much profit as possible.
 
-[Find out more](https://gekko.wizb.it/).
+We can backtest the platform by importing different datasets to simulate the performance.
 
-*Gekko is 100% free (open source), if you paid for this you have been scammed.*
+
 
 `);
 
