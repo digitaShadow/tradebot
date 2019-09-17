@@ -1,8 +1,8 @@
 <template lang='pug'>
   div.my2
     .contain(v-if='!data')
-      h1 Unknown Gekko instance
-      p TradeBpt doesn't know what bot this is...
+      h1 Unknown Bot instance
+      p TradeBot doesn't know what bot this is...
     div(v-if='data')
       h2.contain Gekko {{ type }}
       div(v-if='isArchived', class='contain brdr--mid-gray p1 bg--orange')
