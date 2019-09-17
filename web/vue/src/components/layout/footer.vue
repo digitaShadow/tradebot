@@ -2,11 +2,11 @@
   footer.p2.bg--off-white
     .contain
       p
-        em Use Gekko at your own risk.
-      p Using Gekko v{{ version.gekko }} and Gekko UI v{{ version.ui }}.
+        em 
+      p 
 </template>
-
-<script>
+/*
+<<script>
 const gekkoPackage = require('../../../../../package.json');
 const uiPackage = require('../../../package.json');
 
@@ -21,3 +21,5 @@ export default {
   }
 }
 </script>
+*/
+
