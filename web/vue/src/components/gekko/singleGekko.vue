@@ -2,13 +2,13 @@
   div.my2
     .contain(v-if='!data')
       h1 Unknown Gekko instance
-      p Gekko doesn't know what gekko this is...
+      p TradeBpt doesn't know what bot this is...
     div(v-if='data')
       h2.contain Gekko {{ type }}
       div(v-if='isArchived', class='contain brdr--mid-gray p1 bg--orange')
-        | This is an archived Gekko, it is currently not running anymore.
+        | This is an archived bot, it is currently not running anymore.
       div(v-if='data.errorMessage', class='contain brdr--mid-gray p1 bg--orange')
-        | This is Gekko crashed with the following error: {{ data.errorMessage }}
+        | This is Bot crashed with the following error: {{ data.errorMessage }}
       .grd.contain
         .grd-row
           .grd-row-col-3-6
@@ -65,7 +65,7 @@
             h3 Profit report
             template(v-if='!report')
               p
-                em(v-if='isArchived') This Gekko never executed a trade..
+                em(v-if='isArchived') This Bot never executed a trade..
                 em(v-if='!isArchived') Waiting for at least one trade..
             template(v-if='report')
               .grd-row
@@ -327,23 +327,23 @@ export default {
     },
     stopGekko: function() {
       if(this.hasLeechers) {
-        return alert('This Gekko is fetching market data for multiple stratrunners, stop these first.');
+        return alert('This bot is fetching market data for multiple stratrunners, stop these first.');
       }
 
-      if(!confirm('Are you sure you want to stop this Gekko?')) {
+      if(!confirm('Are you sure you want to stop this bot?')) {
         return;
       }
 
       post('stopGekko', { id: this.data.id }, (err, res) => {
-        console.log('stopped gekko');
+        console.log('stopped bot');
       });
     },
     deleteGekko: function() {
       if(!this.isArchived) {
-        return alert('This Gekko is still running, stop it first!');
+        return alert('This Bot is still running, stop it first!');
       }
 
-      if(!confirm('Are you sure you want to delete this Gekko?')) {
+      if(!confirm('Are you sure you want to delete this Bot?')) {
         return;
       }
 
