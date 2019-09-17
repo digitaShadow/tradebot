@@ -14,11 +14,11 @@ const messages = {
 
 ## Disconnected
 
-Something happened to either Gekko or the connection.
-Please check the terminal where Gekko is running or
+Something happened to either TradeBot or the connection.
+Please check the terminal where TradeBot is running or
 your network connection.
 
-*This message is shown when the UI is unable to open a websocket connection with the Gekko Server.*
+*This message is shown when the UI is unable to open a websocket connection with the Bot Server.*
 
   `)
 }
